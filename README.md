@@ -1,3 +1,4 @@
+# Readme file is generated bu AI
 # ResumeAI - AI-Powered Résumé Analysis
 
 ## Description
