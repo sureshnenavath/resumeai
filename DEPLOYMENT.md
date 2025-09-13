@@ -15,7 +15,7 @@
 1. Go to [railway.app](https://railway.app)
 2. Connect your GitHub repository
 3. Set root directory to `backend`
-4. Add environment variable: `GOOGLE_API_KEY`
+4. Add environment variable: `GEMINI_API_KEY`
 5. Deploy!
 
 ### Option 2: Docker Deployment
@@ -51,7 +51,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 ## 🔧 Environment Setup
 
 ### Required Environment Variables:
-- `GOOGLE_API_KEY`: Your Google Gemini API key
+- `GEMINI_API_KEY`: Your Google Gemini API key
 - `CORS_ORIGINS`: Frontend URL for CORS
 
 ### Frontend Configuration:
@@ -109,7 +109,7 @@ Most hosting providers offer free SSL certificates (Let's Encrypt)
 
 ### Common Issues:
 1. **CORS errors**: Update CORS_ORIGINS in backend
-2. **API key errors**: Check GOOGLE_API_KEY environment variable
+2. **API key errors**: Check GEMINI_API_KEY environment variable
 3. **Build failures**: Check Node.js and Python versions
 4. **Database errors**: Ensure database file permissions
 

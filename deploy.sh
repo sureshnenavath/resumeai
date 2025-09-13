@@ -27,7 +27,7 @@ else
     echo "📋 Manual deployment steps:"
     echo "   1. Deploy frontend: Upload frontend/dist/ to Vercel/Netlify"
     echo "   2. Deploy backend: Upload backend/ to Railway/Render"
-    echo "   3. Set environment variables: GOOGLE_API_KEY"
+    echo "   3. Set environment variables: GEMINI_API_KEY"
     echo "   4. Update VITE_API_URL in frontend"
 fi
 
