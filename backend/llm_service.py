@@ -7,7 +7,7 @@ from schemas import ExtractedData, LLMAnalysis
 
 load_dotenv(dotenv_path=".env")
 
-# Initialize Gemini
+
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("GEMINI_API_KEY environment variable is required")
@@ -18,11 +18,11 @@ llm = GoogleGenerativeAI(
     temperature=0.1
 )
 
-# Parsers
+
 extraction_parser = PydanticOutputParser(pydantic_object=ExtractedData)
 analysis_parser = PydanticOutputParser(pydantic_object=LLMAnalysis)
 
-# Prompts (exact wording as specified)
+
 extraction_prompt = PromptTemplate(
     template="""You are an expert ATS recruiter. Extract comprehensive structured data from the following résumé text. Return ONLY a valid JSON object that matches this schema:
 {{

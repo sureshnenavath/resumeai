@@ -3,7 +3,6 @@ from sqlalchemy.orm import sessionmaker
 import os
 from models import Base
 
-# Use SQLite for easier setup (assessment requirement)
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./resumeai.db")
 
 engine = create_async_engine(DATABASE_URL, echo=True)

@@ -1,6 +1,3 @@
-#!/bin/bash
-# Deployment Script for ResumeAI
-
 echo "🚀 Starting ResumeAI Deployment..."
 
 # Check if we're in the right directory
