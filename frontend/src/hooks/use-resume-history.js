@@ -11,10 +11,22 @@ export const useResumeHistory = (refreshTrigger) => {
       setLoading(true)
       setError(null)
 
+      // Start both the API call and the minimum loading timer
+      const apiPromise = apiClient.get('/history')
+      const minLoadingPromise = new Promise(resolve => setTimeout(resolve, 20000)) // 20 seconds
+
       try {
-        const response = await apiClient.get('/history')
+        // Wait for both the API call and the minimum loading time
+        const [response] = await Promise.all([apiPromise, minLoadingPromise])
         setHistory(response.data)
       } catch (err) {
+        // If API fails, still wait for the minimum loading time
+        try {
+          await minLoadingPromise
+        } catch {
+          // minLoadingPromise never rejects, this is just for completeness
+        }
+        
         const errorMessage = err.response?.data?.detail || 'Failed to fetch history'
         setError(errorMessage)
       } finally {

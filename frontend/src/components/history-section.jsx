@@ -2,6 +2,7 @@ import React from 'react'
 import { Calendar, User, Mail, Phone, Eye, MapPin } from 'lucide-react'
 import { useResumeHistory } from '../hooks/use-resume-history.js'
 import { formatToIST } from '../utils/timezone.js'
+import { apiClient } from '../services/api-client.js'
 
 const HistorySection = ({ 
   onSelectAnalysis, 
@@ -37,10 +38,9 @@ const HistorySection = ({
 
   const handleViewDetails = async (historyItem) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/analysis/${historyItem.id}`)
-      if (response.ok) {
-        const analysis = await response.json()
-        onSelectAnalysis(analysis)
+      const response = await apiClient.get(`/analysis/${historyItem.id}`)
+      if (response.status === 200) {
+        onSelectAnalysis(response.data)
       }
     } catch (err) {
       console.error('Failed to fetch analysis details:', err)

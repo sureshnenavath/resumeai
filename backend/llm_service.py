@@ -5,12 +5,16 @@ from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import PromptTemplate
 from schemas import ExtractedData, LLMAnalysis
 
-load_dotenv()
+load_dotenv(dotenv_path=".env")
 
 # Initialize Gemini
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("GEMINI_API_KEY environment variable is required")
+
 llm = GoogleGenerativeAI(
     model="gemini-1.5-flash",
-    google_api_key=os.getenv("GEMINI_API_KEY"),
+    google_api_key=api_key,
     temperature=0.1
 )
 
