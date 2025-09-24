@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github, Linkedin, Heart } from 'lucide-react'
+import { Github, Linkedin, Heart, Mail } from 'lucide-react'
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
               Built with <Heart className="inline h-4 w-4 text-red-500" /> by Nenavath Suresh
             </h3>
             <p className="text-gray-600 mb-4">
-              AI-powered resume analysis application using Google Gemini
+              AI-powered resume analysis application
             </p>
           </div>
 
@@ -36,12 +36,29 @@ const Footer = () => {
             >
               <Linkedin className="h-6 w-6" />
             </a>
+            <a
+              href="mailto:contact@resumeai.qzz.io"
+              className="text-gray-400 hover:text-green-600 transition-colors"
+              title="Contact Email"
+            >
+              <Mail className="h-6 w-6" />
+            </a>
           </div>
 
+          {/* Contact Info */}
+          <p className="text-sm text-gray-500 mb-4">
+            Need help? Contact us at{" "}
+            <a 
+              href="mailto:contact@resumeai.qzz.io" 
+              className="text-blue-600 hover:text-blue-800 transition-colors"
+            >
+              contact@resumeai.qzz.io
+            </a>
+          </p>
 
           {/* Copyright */}
           <div className="text-sm text-gray-500">
-            <p>© 2024 ResumeAI. All rights reserved.</p>
+            <p>© 2025 ResumeAI. All rights reserved.</p>
             <p className="mt-1">
               <a 
                 href="https://github.com/sureshnenavath" 
