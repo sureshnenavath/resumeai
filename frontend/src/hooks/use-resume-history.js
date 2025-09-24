@@ -13,7 +13,7 @@ export const useResumeHistory = (refreshTrigger) => {
 
       // Start both the API call and the minimum loading timer
       const apiPromise = apiClient.get('/history')
-      const minLoadingPromise = new Promise(resolve => setTimeout(resolve, 20000)) // 20 seconds
+      const minLoadingPromise = new Promise(resolve => setTimeout(resolve, 5000)) // 5 seconds
 
       try {
         // Wait for both the API call and the minimum loading time
